@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--stylesheet for task board-->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>TO DO LIST</title>
+
+</head>
+
+<body>
+    <!--New Task Creation -->
+    <div class="addTaskDiv">
+        <input type="text" id="addtask" placeholder="Please Add Task Description Here"/>
+        <button class="btn" onclick="addCard();" value="Add Task" />Add Task
+    </div>
+
+    <div id="board">
+
+       <!-- To Container -->
+        <div id="todo">
+            <div class="title">To Do</div>
+            <!--sample task created for user Knowledge-->
+            <div id="item1" draggable="true" ondragstart="drag(event)">
+                <div class="removeIcon"><span onclick="removeCard(this)">X</span></div>
+                <div class="cardTitle">
+                    Task 1
+                </div>
+            </div>
+            <!--task which has been used for created new task -->
+            <div class="itemNone">
+            <div id="item2" class="cardContainer" draggable="true" ondragstart="drag(event)">
+                <div class="removeIcon"><span onclick="removeCard(this)"> X</span></div>
+                <div class="cardTitle">
+                    Task 2
+                </div>
+            </div>
+            </div>
+        </div>
+       <!-- In Progress Container -->
+
+        <div id="inprogress" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <div class="title">In Progress</div>
+        </div>
+       <!-- Done Container -->
+        <div id="done" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <div class="title">Done</div>
+        </div>
+
+        </div>
+
+
+
+    </div>
+    <!-- script for task creation,drag and drop functionality-->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
